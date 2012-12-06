@@ -1,11 +1,11 @@
 Why ?
 ====
 
-I'm learning some ruby so i can be like all the cool kids :)
+I'm learning some ruby so I can be like all the cool kids :)
 
 start 
 -----
 ruby -rubygems app.rb
 
-#TODO
+###TODO
 sort out whitespace so morse can be input better and words in morse strings are separated when entered via input box
