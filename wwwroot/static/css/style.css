@@ -1,0 +1,108 @@
+/* goodday */
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+body,html {
+	background-color: #666;
+}
+footer, header {
+	width: 100%;
+	background-color: #666;
+	color: #fff;
+}
+footer div, header div {
+	padding: 1em;
+	max-width: 600px;
+	margin: auto;
+}
+header {
+	min-height:7em;
+	height:190px;
+	background: #666 url('/imgs/clouds.png') no-repeat 100% 0%;
+}
+#submarine {
+	transition: rotate 20s;
+	position: relative;
+	display:block;
+	margin:auto;
+}
+#waves{
+	width:100%;
+	height:60px;
+	background:transparent url('/imgs/waves.png') repeat-x 100% 100%;	
+	position:absolute;
+	top:130px;
+}
+article {
+	background-color: #fefefe;
+	color: #666;
+	min-height: 400px;
+	background: #fefefe url('/imgs/mines.png') no-repeat 100% 100%;
+}
+article div {
+	padding: 1em;
+	max-width: 600px;
+	margin: auto;
+}
+form ul {
+	padding: 1em 0 1em 0;
+}
+form li {
+	list-style-type: none;
+	clear: both;
+	padding: .25em 0 1em 0;
+}
+form input,div.output {
+	width: 75%;
+	padding: .25em;
+	border: 1px solid #dddddd;
+	border-radius: .25em;
+	font-size: inherit;
+	white-space: pre;
+}
+div.output {
+	white-space: pre;
+	float: left;
+	margin-bottom: 1em;
+	border: 0;
+}
+input[type="submit"] {
+	width: 200px;
+	float: right;
+	margin-right: 13%;
+}
+input[type="submit"]:hover {
+	background-color: #ccc;
+	border-color: #bbb;
+}
+label,.label {
+	float: left;
+	width: 60px;
+	display: inline-block;
+}
+input[type="text"]:hover {
+	border-color: #bbb;
+	background-color: #efefef;
+}
+dl {
+	max-width: 600px;
+	color: #999;
+}
+dt {
+	width: 60px;
+	float: left;
+	clear: left;
+}
+dd {
+	width: 440px;
+	float: left;
+}
+footer a {
+	color: #999;
+}
+footer a:hover {
+	color: #ddd;
+}
+

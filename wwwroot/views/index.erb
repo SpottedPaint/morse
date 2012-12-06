@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+	<title>Morse</title>
+	<meta name="description" content="" >
+	<meta name="keywords" content="" >
+	<link rel="shortcut icon" href="/imgs/favicon.png" >
+	<link rel="author" href="humans.txt" />
+	<link rel="stylesheet" type="text/css" media="all" href="/css/style.css" >
+	<meta name="author" content="Toby">
+</head>
+<body>
+	<header>
+		<div>
+			<h1>Morse</h1>
+			<img id="submarine" alt="submarine" src="/imgs/submarine.png" >
+		</div>
+		
+	</header>
+	<div id="waves"></div>
+	<article>
+		<div>
+			<form method="get" id="translate" >
+				<ul>
+					<li>
+						<label for="input">In:</label>
+						<input type="text" name="input" value="<%= @input %>" placeholder="Your text.." id="input">
+					</li>
+					<li>
+						<span class="label">Out:</span><div class="output"><%= @output %></div>
+					</li>
+					<li>
+						<input type="submit" name="send" value="Send" id="send">
+					</li>
+				</ul>
+			</form>
+		</div>
+	</article>
+	<footer>
+		<div>
+			<dl>
+				<dt class="question" >
+					Why?
+				</dt>
+				<dd class="answer">
+					I'm learning some Ruby plus Cucumber/Gherkin and Morse is pretty neat.
+				</dd>
+			
+				<dt class="question" >
+					Who? 
+				</dt>
+				<dd class="answer">
+					<a href="http://spottedpaint.com">Adam</a>
+				</dd>
+			</dl>
+		</div>
+	</footer>
+	<!--<audio>
+		<source src="audio/beep.mp3"></source>
+		<source src="audio/beep.ogg"></source>
+		Your browser isn't invited for super fun audio time.
+	</audio>-->
+	<script src="/js/jquery-1.8.2.min.js" ></script>
+	<script src="/js/error.js" ></script>
+	<script src="/js/faster.js" ></script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,19 @@
+/* TEAM */
+Your title: Adam
+Site: spottedpaint.com
+Twitter: @SpottedPaint
+Location: Watton, Norfolk.
+
+
+/* THANKS */
+Name: NRUG
+Web: www.meetup.com/Norwich-Ruby-User-Group-NRUG/
+From: Norwich, Norfolk
+
+/* SITE */
+Last update: 2012/12/06
+Standards: HTML5, CSS3
+Components: Ruby, Sinatra
+Software: Textmate
+
+
