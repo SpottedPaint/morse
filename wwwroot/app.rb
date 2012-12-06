@@ -1,9 +1,10 @@
 # app.rb
 require 'sinatra'
-require 'mustache/sinatra'
+#require 'mustache/sinatra'
 require 'rubygems'
-require 'morse'
 require 'json'
+require 'wwwroot/Morse'
+
 set :public_folder, File.dirname(__FILE__) + '/static'
 
 def index
