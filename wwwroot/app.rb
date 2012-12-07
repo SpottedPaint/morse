@@ -3,7 +3,7 @@ require 'sinatra'
 #require 'mustache/sinatra'
 require 'rubygems'
 require 'json'
-require 'wwwroot/Morse'
+require_relative 'Morse'
 
 set :public_folder, File.dirname(__FILE__) + '/static'
 
