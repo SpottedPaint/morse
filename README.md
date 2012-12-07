@@ -12,4 +12,6 @@ sort out whitespace so morse can be input better and words in morse strings are 
 
 This probably only works in 1.9.x as it uses require_relative that seemed improvement on ../ style paths
 
-http://shielded-depths-2442.herokuapp.com/ | git@heroku.com:shielded-depths-2442.git
+Y'all can see it via heroku at http://morse.adamwilson.info
+
+http://shielded-depths-2442.herokuapp.com/
