@@ -64,6 +64,9 @@ form input,div.output {
 }
 div.output {
 	white-space: pre;
+	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	white-space: pre-wrap;
 	float: left;
 	margin-bottom: 1em;
 	border: 0;
