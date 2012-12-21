@@ -146,29 +146,10 @@ class Morse
 	end
 
 	def english?(string)
-		if /^[-|.]/.match(string)
+		if /^[-.]/.match(string)
 			return false
 		else
 			return true
 		end
 	end
 end
-
-m = Morse.new()
-#puts m.englishToMorse('w')
-#puts m.morseToEnglish('.--')
-#puts m.englishString('.--   ')
-#puts m.englishString('.--   .--')
-#puts m.translateFromMorse('.--   ')
-#puts m.translate('.--   .')
-
-
-#puts m.translateFromEnglish('hello mum')
-#puts m.translateFromMorse(m.translateFromEnglish('hello mum'))
-#puts m.englishToMorse('e')
-
-#out = []
-#input = "what's the frequency kenneth. 
-#Yeah that is weird"
-#puts m.translate("e")
-
