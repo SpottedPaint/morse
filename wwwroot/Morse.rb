@@ -5,63 +5,61 @@ class Morse
 
 	def initialize()
 		
-	@englishMorse = Hash[
-		"a" => ".-",
-		"b" => "-...",
-		"c" => "-.-.",
-		"d" => "-..",
-		"e" => ".",
-		"f" => "..-.",
-		"g" => "--.",
-		"h" => "....",
-		"i" => "..",
-		"j" => ".---",
-		"k" => "-.-",
-		"l" => ".-..",
-		"m" => "--",
-		"n" => "-.",
-		"o" => "---",
-		"p" => ".--.",
-		"q" => "--.-",
-		"r" => ".-.",
-		"s" => "...",
-		"t" => "-",
-		"u" => "..-",
-		"v" => "...-",
-		"w" => ".--",
-		"x" => "-..-",
-		"y" => "-.--",
-		"z" => "--..",
-		"0" => "-----",
-		"1" => ".----",
-		"2" => "..---",
-		"3" => "...--",
-		"4" => "....-",
-		"5" => ".....",
-		"6" => "-....",
-		"7" => "--...",
-		"8" => "---..",
-		"9"=> "----.",
-		
-		"." => ".-.-.-",
-		"," => "--..--",
-		"?" => "..--..",
-		"'" => ".----.",
-		"!" => "-.-.--",
-		"/" => "-..-.",
-		"(" => "-.--.",
-		")" => "-.--.-",
-		"&" => ".-...",
-		":" => "---...",
-		";" => "-.-.-.",
-		"=" => "-...-",
-		"+" => ".-.-.",
-		"_" => "..--.-",
-		'"' => ".-..-.",
-		"$" => "...-..-",
-		"@" => ".--.-.",
-		
-		" " => "   "
+		@englishMorse = Hash[
+			"a" => ".-",
+			"b" => "-...",
+			"c" => "-.-.",
+			"d" => "-..",
+			"e" => ".",
+			"f" => "..-.",
+			"g" => "--.",
+			"h" => "....",
+			"i" => "..",
+			"j" => ".---",
+			"k" => "-.-",
+			"l" => ".-..",
+			"m" => "--",
+			"n" => "-.",
+			"o" => "---",
+			"p" => ".--.",
+			"q" => "--.-",
+			"r" => ".-.",
+			"s" => "...",
+			"t" => "-",
+			"u" => "..-",
+			"v" => "...-",
+			"w" => ".--",
+			"x" => "-..-",
+			"y" => "-.--",
+			"z" => "--..",
+			"0" => "-----",
+			"1" => ".----",
+			"2" => "..---",
+			"3" => "...--",
+			"4" => "....-",
+			"5" => ".....",
+			"6" => "-....",
+			"7" => "--...",
+			"8" => "---..",
+			"9"=> "----.",
+			"." => ".-.-.-",
+			"," => "--..--",
+			"?" => "..--..",
+			"'" => ".----.",
+			"!" => "-.-.--",
+			"/" => "-..-.",
+			"(" => "-.--.",
+			")" => "-.--.-",
+			"&" => ".-...",
+			":" => "---...",
+			";" => "-.-.-.",
+			"=" => "-...-",
+			"+" => ".-.-.",
+			"_" => "..--.-",
+			'"' => ".-..-.",
+			"$" => "...-..-",
+			"@" => ".--.-.",
+			" " => "   "
 		]
 		
 		@morseEnglish = Hash[
@@ -101,7 +99,6 @@ class Morse
 			"--..." => "7",
 			"---.." => "8",
 			"----." => "9",
-			
 			".-.-.-" => ".",
 			"--..--" => ",",
 			"..--.." => "?",
@@ -119,10 +116,8 @@ class Morse
 			".-..-." => '"',
 			"...-..-" => "$",
 			".--.-." => "@",
-			
-			
 			" " => "   "
-			]
+		]
 	end
 	
 
@@ -135,27 +130,20 @@ class Morse
 	end
 
 	def morseString(string)
-		out = []
-		string.split('').each { |character|
-			out << self.englishToMorse(character)
-		}
-		out.join('   ')
+		string.split('').map { |character| self.englishToMorse(character) }.join('   ')
+		#out = []
+		#	string.split('').each { |character|
+		#		out << self.englishToMorse(character)
+		#	}
+		#	out.join('   ')
 	end
 	
 	def words(string)
-		out = []
-		string.split('       ').each { |word|
-			out << self.englishString(word)
-		}
-		out.join(' ')
+		string.split('       ').map { |word| self.englishString(word) }.join(' ')
 	end
 	
 	def englishString(string)
-		out = []
-		string.split(' ').each { |morseCharacter|
-			out << self.morseToEnglish(morseCharacter)
-		}
-		out.join('')
+		string.split(' ').map { |morseCharacter| self.morseToEnglish(morseCharacter) }.join('')
 	end
 
 	def translate(paragraph)
@@ -167,23 +155,13 @@ class Morse
 	end
 	
 	def translateFromMorse(paragraph)
-		paragraph = paragraph.gsub(/\+/,' ')
-	    sentences = []
-		paragraph.split('.-.-       ').each { |sentence|
-			sentences << self.words(sentence)
-		}
-		sentences.join("
+		paragraph.gsub(/\+/,' ').split('.-.-       ').map { |sentence| self.words(sentence) }.join("
 ")
 	end 
 	
 	def translateFromEnglish(paragraph)
-		paragraph = paragraph.downcase
-		sentences = []
-		paragraph.split("
-").each { |sentence|
-				sentences << self.morseString(sentence)
-		}
-		sentences.join(".-.-       ")
+		paragraph.downcase.split("
+").map { |sentence| self.morseString(sentence) }.join(".-.-       ")
 	end
 
 	def english?(string)
