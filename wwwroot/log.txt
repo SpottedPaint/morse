@@ -1,5 +1,2 @@
 /* Javascript errors */ 
-{"url":"http://0.0.0.0:4567/","message":"b is not defined","script":"http://0.0.0.0:4567/js/faster.js","t":"ttt","line":"8","type":"ReferenceError"}
-{"url":"http://0.0.0.0:4567/","message":"b is not defined","script":"http://0.0.0.0:4567/js/faster.js","t":"ttt","line":"11","type":"ReferenceError"}
-{"url":"http://0.0.0.0:4567/","message":"b is not defined","script":"http://0.0.0.0:4567/js/faster.js","t":"ttt","line":"11","type":"ReferenceError"}
-{"url":"http://0.0.0.0:4567/","message":"h is not defined","script":"http://0.0.0.0:4567/js/faster.js","t":"ttt","line":"11","type":"ReferenceError"}
+
