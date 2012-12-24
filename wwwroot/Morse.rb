@@ -130,12 +130,15 @@ class Morse
 	end
 
 	def morseString(string)
-		string.split('').map { |character| self.englishToMorse(character) }.join('   ')
-		#out = []
+		# all these methods were multiline like below
+		# think that was probably easier to read
+		#
+		#	out = []
 		#	string.split('').each { |character|
 		#		out << self.englishToMorse(character)
 		#	}
-		#	out.join('   ')
+		#	return out.join('   ')
+		string.split('').map { |character| self.englishToMorse(character) }.join('   ')
 	end
 	
 	def words(string)
@@ -155,13 +158,11 @@ class Morse
 	end
 	
 	def translateFromMorse(paragraph)
-		paragraph.gsub(/\+/,' ').split('.-.-       ').map { |sentence| self.words(sentence) }.join("
-")
+		paragraph.gsub(/\+/,' ').split('.-.-       ').map { |sentence| self.words(sentence) }.join("\n")
 	end 
 	
 	def translateFromEnglish(paragraph)
-		paragraph.downcase.split("
-").map { |sentence| self.morseString(sentence) }.join(".-.-       ")
+		paragraph.downcase.split(/\r?\n/).map { |sentence| self.morseString(sentence) }.join(".-.-       ")
 	end
 
 	def english?(string)
