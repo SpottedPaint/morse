@@ -127,11 +127,11 @@ class Morse
 	
 
 	def morseToEnglish(character)
-    	return @morseEnglish[character]
+    	@morseEnglish[character]
 	end
 	
 	def englishToMorse(character)
-    	return @englishMorse[character]
+    	@englishMorse[character]
 	end
 
 	def morseString(string)
@@ -139,7 +139,7 @@ class Morse
 		string.split('').each { |character|
 			out << self.englishToMorse(character)
 		}
-		return out.join('   ')
+		out.join('   ')
 	end
 	
 	def words(string)
@@ -147,23 +147,22 @@ class Morse
 		string.split('       ').each { |word|
 			out << self.englishString(word)
 		}
-		return out.join(' ')
+		out.join(' ')
 	end
 	
 	def englishString(string)
 		out = []
-		#string = string.gsub(/(\s){3}/,'  ')
 		string.split(' ').each { |morseCharacter|
 			out << self.morseToEnglish(morseCharacter)
 		}
-		return out.join('')
+		out.join('')
 	end
 
 	def translate(paragraph)
 		if self.english? paragraph
-			return translateFromEnglish(paragraph)
+			translateFromEnglish(paragraph)
 		else
-			return translateFromMorse(paragraph)
+			translateFromMorse(paragraph)
 		end
 	end
 	
@@ -173,7 +172,7 @@ class Morse
 		paragraph.split('.-.-       ').each { |sentence|
 			sentences << self.words(sentence)
 		}
-		return sentences.join("
+		sentences.join("
 ")
 	end 
 	
@@ -184,15 +183,14 @@ class Morse
 ").each { |sentence|
 				sentences << self.morseString(sentence)
 		}
-		return sentences.join(".-.-       ")
-		
+		sentences.join(".-.-       ")
 	end
 
 	def english?(string)
 		if /^[-.]/.match(string)
-			return false
+			false
 		else
-			return true
+			true
 		end
 	end
 end
