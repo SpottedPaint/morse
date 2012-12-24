@@ -1,5 +1,5 @@
 class Morse
-	# TODO: add prosigns? http://en.wikipedia.org/wiki/Prosigns_for_Morse_code
+	
 	attr_accessor :morseEnglish
 	attr_accessor :englishMorse
 
