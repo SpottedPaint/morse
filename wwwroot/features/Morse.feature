@@ -22,8 +22,3 @@ Feature: Morse
 	Scenario: Deal with space between words
 		When I have entered f ee into translator
 		Then the morse returned should be "..-.         .   ." .
-	
-	Scenario: Deal with sentences
-		When you find a '. ' in input
-		Then the morse returned should be "     \n".
-

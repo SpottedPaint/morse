@@ -1,6 +1,7 @@
 class Morse
-  attr_accessor :morseEnglish
-  attr_accessor :englishMorse
+	# TODO: add prosigns? http://en.wikipedia.org/wiki/Prosigns_for_Morse_code
+	attr_accessor :morseEnglish
+	attr_accessor :englishMorse
 
 	def initialize()
 		
@@ -40,7 +41,26 @@ class Morse
 		"6" => "-....",
 		"7" => "--...",
 		"8" => "---..",
-		"9 "=> "----.",
+		"9"=> "----.",
+		
+		"." => ".-.-.-",
+		"," => "--..--",
+		"?" => "..--..",
+		"'" => ".----.",
+		"!" => "-.-.--",
+		"/" => "-..-.",
+		"(" => "-.--.",
+		")" => "-.--.-",
+		"&" => ".-...",
+		":" => "---...",
+		";" => "-.-.-.",
+		"=" => "-...-",
+		"+" => ".-.-.",
+		"_" => "..--.-",
+		'"' => ".-..-.",
+		"$" => "...-..-",
+		"@" => ".--.-.",
+		
 		" " => "   "
 		]
 		
@@ -81,6 +101,26 @@ class Morse
 			"--..." => "7",
 			"---.." => "8",
 			"----." => "9",
+			
+			".-.-.-" => ".",
+			"--..--" => ",",
+			"..--.." => "?",
+			".----." => "'",
+			"-.-.--" => "!",
+			"-..-." => "/",
+			"-.--." => "(",
+			"-.--.-" => ")",
+			".-..." => "&",
+			"---..." => ":",
+			"-.-.-." => ";",
+			"-...-" => "=",
+			".-.-." => "+",
+			"..--.-" => "_",
+			".-..-." => '"',
+			"...-..-" => "$",
+			".--.-." => "@",
+			
+			
 			" " => "   "
 			]
 	end
@@ -130,19 +170,22 @@ class Morse
 	def translateFromMorse(paragraph)
 		paragraph = paragraph.gsub(/\+/,' ')
 	    sentences = []
-		paragraph.split('\n').each { |sentence|
+		paragraph.split('.-.-       ').each { |sentence|
 			sentences << self.words(sentence)
 		}
-		return sentences.join("n")
+		return sentences.join("
+")
 	end 
 	
 	def translateFromEnglish(paragraph)
 		paragraph = paragraph.downcase
 		sentences = []
-		paragraph.split('. ').each { |sentence|
-			sentences << self.morseString(sentence)
+		paragraph.split("
+").each { |sentence|
+				sentences << self.morseString(sentence)
 		}
-		return sentences.join("     \n")
+		return sentences.join(".-.-       ")
+		
 	end
 
 	def english?(string)
